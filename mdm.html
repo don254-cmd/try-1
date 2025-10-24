@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MDM Files - Zoom Tech</title>
+<link rel="stylesheet" href="assets/css/style.css"><script src="assets/js/site.js" defer></script></head><body>
+<header>
+  <div style="display:flex;align-items:center"><div class="logo"></div><div class="brand">ZOOM TECH</div></div>
+  <nav>
+    <a href="index.html">Home</a><a href="mdm.html">MDM Files</a><a href="courses.html">Courses</a><a href="tools.html">Tools Activation</a><a href="bypass.html">Bypass Scripts</a><a href="services.html">Other Services</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-right"><input class="search-input" placeholder="Search the site..." onfocus="openSearch()"><button class="cart-btn" onclick="checkout()">🛒 Cart <span id="cartCount" class="cart-count">0</span></button></div>
+</header>
+
+<section class="container">
+  <h2 class="section-title">MDM Files</h2>
+  <div class="tabs" id="brandTabs">
+<div class="tab" onclick="showBrand('Itel', this)">Itel</div><div class="tab" onclick="showBrand('Tecno', this)">Tecno</div><div class="tab" onclick="showBrand('Samsung', this)">Samsung</div><div class="tab" onclick="showBrand('Others', this)">Others</div>
+  </div>
+  <div id="brandContent"></div>
+</section>
+
+<footer class="footer">© 2025 Zoom Tech</footer>
+</body>
+<script>
+const BRANDS = {"Itel": ["Itel S18", "Itel A33", "Itel P36", "Itel S17 Pro", "Itel A48", "Itel P55", "Itel Vision 1"], "Tecno": ["Tecno Spark 6", "Tecno Camon 16", "Tecno Pouvoir 4", "Tecno Phantom X", "Tecno Pop 5", "Tecno Pova 3", "Tecno Spark 7"], "Samsung": ["Samsung A10", "Samsung A12", "Samsung A21s", "Samsung S9", "Samsung S10", "Samsung Note 9", "Samsung M31"], "Others": ["Infinix Hot 10", "Nokia 2.4", "Huawei Y6", "Realme C11", "Xiaomi Redmi 9", "Motorola G8", "Sony Xperia L4"]};
+function showBrand(brand, el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const content = document.getElementById('brandContent');
+  content.innerHTML = '';
+  const list = BRANDS[brand];
+  const grid = document.createElement('div'); grid.className='grid';
+  list.forEach(d=>{
+    const card = document.createElement('div'); card.className='card';
+    card.innerHTML = `<h4>${d}</h4><p class="small">MDM file</p><p class="small">Price: $5</p><button class="btn" onclick="addToCart('${d} MDM File',5)">Add to cart</button>`;
+    grid.appendChild(card);
+    // add to search index
+    addToIndex(d,'MDM File','MDM Files',$5);
+  });
+  content.appendChild(grid);
+}
+// auto show first
+window.addEventListener('DOMContentLoaded',()=>{ document.querySelectorAll('.tab')[0].click(); });
+</script></html>

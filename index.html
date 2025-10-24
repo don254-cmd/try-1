@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zoom Tech - Home</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js" defer></script>
+</head><body>
+<header>
+  <div style="display:flex;align-items:center">
+    <div class="logo"></div>
+    <div class="brand">ZOOM TECH</div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mdm.html">MDM Files</a>
+    <a href="courses.html">Courses</a>
+    <a href="tools.html">Tools Activation</a>
+    <a href="bypass.html">Bypass Scripts</a>
+    <a href="services.html">Other Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-right">
+    <input class="search-input" placeholder="Search the site..." onfocus="openSearch()">
+    <button class="cart-btn" onclick="checkout()">🛒 Cart <span id="cartCount" class="cart-count">0</span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Zoom into the Future of Tech.</h1>
+    <p>Premium MDM files, flashing tools, and software support for technicians worldwide.</p>
+    <div style="margin-top:18px">
+      <button class="btn" onclick="location.href='courses.html'">Course Tab</button>
+      <button class="btn" onclick="location.href='mdm.html'">File Tab</button>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-title">Top Offers</div>
+  <div class="grid">
+    <div class="card"><h4>Mobile Software (Beginner → Pro)</h4><p class="small">1–6 weeks • Videos, voice calls, PDFs</p><p class="small">Price: $80</p><button class="btn" onclick="addToCart('Mobile Software Course',80)">Add to Cart</button></div>
+    <div class="card"><h4>ISP Masterclass</h4><p class="small">1–6 weeks • Videos, voice calls, PDFs</p><p class="small">Price: $100</p><button class="btn" onclick="addToCart('ISP Masterclass',100)">Add to Cart</button></div>
+    <div class="card"><h4>Professional Package</h4><p class="small">All ISP tools, case studies, quick support</p><p class="small">Price: $150</p><button class="btn" onclick="addToCart('Professional Package',150)">Add to Cart</button></div>
+    <div class="card"><h4>UMT – 1 year</h4><p class="small">Tool Activation</p><p class="small">Price: 9000 Ksh + tax</p><button class="btn" onclick="addToCart('UMT 1 year',9000)">Add to Cart</button></div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-title">Quick File Search</div>
+  <p style="text-align:center" class="small">Use the global search (top-right) to find devices, courses, tools and services across the site.</p>
+</section>
+
+<section class="container">
+  <div class="section-title">Latest Blogs</div>
+  <div class="grid">
+    <div class="blog"><h4>How to Fix MDM Locked Devices</h4><p class="small">A technician's walkthrough with tools and tips.</p></div>
+    <div class="blog"><h4>Top Activation Tools Compared</h4><p class="small">Which activations give the best value in 2025.</p></div>
+  </div>
+</section>
+
+<footer class="footer">© 2025 Zoom Tech • <a href="about.html" style="color:#a9dffd">Privacy & Policy</a></footer>
+
+<!-- Search Modal -->
+<div id="searchModal" class="modal"><div class="box">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <h3>Search the site</h3>
+    <button class="btn" onclick="closeSearch()">Close</button>
+  </div>
+  <div style="margin-top:12px">
+    <input id="globalSearchInput" class="search-input" placeholder="Type to search..." oninput="globalSearch()">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div></div>
+
+</body></html>
